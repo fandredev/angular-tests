@@ -1,4 +1,6 @@
-# NgTest1
+# Unit Test with Jasmine and Karma
+
+<img src="https://user-images.githubusercontent.com/49297012/125377328-2c557e80-e363-11eb-9b37-02024aed844a.png" alt="Testing with Jasmine and Karma using Angular" />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
@@ -18,10 +20,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Course by Alura: https://cursos.alura.com.br/course/angular-testes-automatizados-jasmin-karma
