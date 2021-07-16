@@ -5,19 +5,12 @@ import { UniqueIdService } from '../../services/unique-id/unique-id.service';
 import { LikeWidgetComponent } from './like-widget.component';
 
 
-describe(LikeWidgetComponent.name,() => {
+describe(LikeWidgetComponent.name, () => {
   let fixture: ComponentFixture<LikeWidgetComponent> = null
   let component: LikeWidgetComponent = null
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      //  Testando antes de codar
-
-      // declarations: [LikeWidgetComponent],
-      // providers: [UniqueIdService],
-      // imports: [FontAwesomeModule]
-
-      // Testando depois de codar
       imports: [LikeWidgetModule]
     }).compileComponents()
 
@@ -25,16 +18,45 @@ describe(LikeWidgetComponent.name,() => {
     component = fixture.componentInstance
   })
 
-  it('should create component',() => {
+  it('should create component', () => {
     expect(component).toBeTruthy()
   })
+  it(`(D) should display number of likes when ENTER key is pressed`, () => {
+    fixture.detectChanges()
+    component.liked.subscribe(() => {
+      component.likes++
+      fixture.detectChanges()
+      const counterEl: HTMLElement = fixture.nativeElement.querySelector('.like-counter')
+      expect(counterEl.textContent.trim()).toBe('1')
+    })
+    const event = new KeyboardEvent('keyup', { key: 'Enter' }) as KeyboardEvent
+    const likeWidgetContainerEl: HTMLElement = fixture.nativeElement.querySelector('.like-widget-container')
+    likeWidgetContainerEl.dispatchEvent(event)
+  })
 
-  it('should auto generate ID during ngOnInit when (@Input id) is not assigned',() => {
+  it(`(D) should display number of likes when clicked`, () => {
+    fixture.detectChanges()
+    component.liked.subscribe(() => {
+      component.likes++
+      fixture.detectChanges()
+      const counterElement: HTMLElement = fixture.nativeElement
+        .querySelector('.like-counter')
+      expect(counterElement.textContent.trim()).toBe('1')
+      // done()
+    })
+    const likeWidgetContainer: HTMLElement = fixture.nativeElement
+      .querySelector('.like-widget-container')
+    likeWidgetContainer.click()
+
+
+  })
+
+  it('should auto generate ID during ngOnInit when (@Input id) is not assigned', () => {
     fixture.detectChanges() // Inicia a detecção de lifecycle
     expect(component.id).toBeTruthy()
   })
 
-  it('should not auto generate id during ngOnInit when (@Input id) is assigned',() => {
+  it('should not auto generate id during ngOnInit when (@Input id) is assigned', () => {
     const someId = 'someId'
     component.id = someId
     fixture.detectChanges() // Inicia a detecção de lifecycle
@@ -58,5 +80,6 @@ describe(LikeWidgetComponent.name,() => {
       // })
       // component.like()
 
-  })
+    })
+
 })

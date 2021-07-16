@@ -16,14 +16,14 @@ export class LikeWidgetComponent implements OnInit {
     faThumbsUp
   }
 
-  constructor(private _uniqueIdService: UniqueIdService){}
+  constructor(private _uniqueIdService: UniqueIdService) { }
 
-  ngOnInit() : void {
-    if(!this.id)
+  ngOnInit(): void {
+    if (!this.id)
       this.id = this._uniqueIdService.generateUniqueIdWithPrefix('like-widget')
   }
 
-  like() : void {
+  like(): void {
     this.liked.emit()
   }
 }

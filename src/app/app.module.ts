@@ -1,3 +1,4 @@
+import { PhotoFrameModule } from './shared/components/photo-frame/photo-frame.module';
 import { LikeWidgetModule } from './shared/components/like-widget/like-widget.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LikeWidgetModule
+    LikeWidgetModule,
+    PhotoFrameModule
   ],
   providers: [],
   bootstrap: [AppComponent]
