@@ -4,7 +4,7 @@ import { ActionDirective } from "./action.directive";
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-describe(ActionDirective.name, () => {
+xdescribe(ActionDirective.name, () => {
   let fixture: ComponentFixture<ActionDirectiveTestComponent>
   let component: ActionDirectiveTestComponent
 

@@ -5,7 +5,7 @@ import { UniqueIdService } from '../../services/unique-id/unique-id.service';
 import { LikeWidgetComponent } from './like-widget.component';
 
 
-describe(LikeWidgetComponent.name, () => {
+xdescribe(LikeWidgetComponent.name, () => {
   let fixture: ComponentFixture<LikeWidgetComponent> = null
   let component: LikeWidgetComponent = null
 
